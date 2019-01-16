@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Input = () => {
-  return null;
+  return <input />;
 };
 
 export default Input;
