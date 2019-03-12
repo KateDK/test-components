@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Input = () => {
-  return <input />;
+const Input = ({ value }) => {
+  return (
+    <div>
+      <input value={value} />
+    </div>
+  );
 };
 
 export default Input;

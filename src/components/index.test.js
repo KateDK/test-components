@@ -7,4 +7,9 @@ describe('Input component', () => {
     const component = shallow(<Input />);
     expect(component.exists('input')).toBe(true);
   });
+  it('renders input with given value', () => {
+    const value = 'Hello There!';
+    const component = shallow(<Input value={value} />);
+    expect(component.find('input').props().value).toEqual(value);
+  });
 });
