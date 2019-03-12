@@ -12,9 +12,11 @@ class Input extends React.Component {
   };
 
   render() {
-    const { value } = this.props;
-
-    return <input value={value} onChange={this.onChange} />;
+    const { value, error } = this.props;
+    const className = error ? 'error' : '';
+    return (
+      <input className={className} value={value} onChange={this.onChange} />
+    );
   }
 }
 
