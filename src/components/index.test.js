@@ -25,4 +25,8 @@ describe('Input component', () => {
     expect(onChange).toBeCalledTimes(1);
     expect(onChange).toBeCalledWith(newValue);
   });
+  it('has an error state', () => {
+    const component = shallow(<Input error />);
+    expect(component.hasClass('error')).toBe(true);
+  });
 });
