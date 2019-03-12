@@ -12,4 +12,17 @@ describe('Input component', () => {
     const component = shallow(<Input value={value} />);
     expect(component.find('input').props().value).toEqual(value);
   });
+  it('calls onChange handler with a new value', () => {
+    const value = ' Hello There!';
+    const newValue = 'New Test Value';
+    const onChange = jest.fn();
+
+    const component = shallow(<Input value={value} onChange={onChange} />);
+
+    const evt = { target: { value: newValue } };
+    component.find('input').simulate('change', evt);
+
+    expect(onChange).toBeCalledTimes(1);
+    expect(onChange).toBeCalledWith(newValue);
+  });
 });
